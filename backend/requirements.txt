@@ -1,0 +1,15 @@
+# Pinned versions verified together on Python 3.12 (see README "Tested environment").
+fastapi==0.143.2
+starlette==1.8.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.16.0
+SQLAlchemy[asyncio]==2.1.4
+asyncpg==0.32.0
+alembic==1.20.0
+psycopg[binary]==3.3.6
+redis==8.1.0
+httpx==0.28.1
+# tests
+pytest==9.1.1
+pytest-asyncio==1.4.0

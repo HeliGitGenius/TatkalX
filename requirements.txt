@@ -1,0 +1,2 @@
+# Backend, tests and load-testing dependencies
+-r backend/requirements.txt

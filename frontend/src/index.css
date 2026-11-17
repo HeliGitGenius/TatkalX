@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* TatkalX tokens. Seat states use railway signal aspects:
+   green = proceed (available), amber = caution (a booking is in flight), red = stop (booked). */
+@theme {
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", "Segoe UI", system-ui, sans-serif;
+
+  --color-ink: #14213d;
+  --color-ink-soft: #4a5672;
+  --color-ground: #eef1f4;
+  --color-panel: #ffffff;
+  --color-rule: #d5dbe3;
+  --color-livery: #9e2a2b;
+  --color-livery-dark: #7d1f20;
+  --color-proceed: #2f7d4f;
+  --color-proceed-soft: #e3f1e8;
+  --color-caution: #d99a1e;
+  --color-caution-soft: #fbf0d9;
+  --color-stop: #9e2a2b;
+  --color-blocked: #a7afbb;
+
+  --color-node-a: #14213d;
+  --color-node-b: #1b7f8c;
+  --color-node-c: #c0791f;
+}
+
+html { background: var(--color-ground); color: var(--color-ink); }
+body { font-family: var(--font-sans); font-feature-settings: "tnum" 1; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 3px solid var(--color-node-b); outline-offset: 2px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.blocked-hatch {
+  background: repeating-linear-gradient(135deg, #e3e7ec 0 4px, #c9d0d9 4px 6px);
+}
+@keyframes cell-in { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
+.cell-in { animation: cell-in .35s ease-out both; }
+
+@layer components {
+  .input {
+    @apply w-full h-11 rounded-md border border-rule bg-white px-3 text-[16px] text-ink placeholder:text-ink-soft/70 focus:border-ink focus:outline-none;
+  }
+  .btn-primary {
+    @apply h-11 px-5 rounded-md bg-livery text-white font-semibold text-[16px] hover:bg-livery-dark disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+  .btn-quiet {
+    @apply h-10 px-4 rounded-md border border-rule bg-panel text-ink font-medium text-[15px] hover:border-ink disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+  .btn-danger {
+    @apply h-10 px-4 rounded-md border border-stop/50 bg-panel text-stop font-medium text-[15px] hover:bg-[#f8e7e7] disabled:opacity-50 transition-colors;
+  }
+}

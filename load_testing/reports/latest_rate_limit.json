@@ -1,0 +1,355 @@
+{
+  "run_id": "rate_limit-20261015T170148-1baf",
+  "scenario": "rate_limit",
+  "allocation": "auto",
+  "triggered_by": "cli",
+  "started_at": "2026-10-15T17:01:49.183794+00:00",
+  "coordination_mode": "redis_lock",
+  "rate_limit_test_mode": true,
+  "journey_id": 61,
+  "seats_available_at_start": 60,
+  "total_requests": 60,
+  "successful_bookings": 20,
+  "seat_unavailable_responses": 0,
+  "seat_unavailable_by_code": {},
+  "duplicate_request_responses": 0,
+  "duplicate_replayed": 0,
+  "duplicate_in_progress": 0,
+  "rate_limited_responses": 40,
+  "validation_errors": 0,
+  "unexpected_errors": 0,
+  "unexpected_error_samples": [],
+  "requests_by_node": {
+    "A": 19,
+    "B": 20,
+    "C": 21
+  },
+  "latency_ms": {
+    "avg": 152.23,
+    "median": 139.78,
+    "p95": 221.03,
+    "p99": 222.88,
+    "max": 222.96,
+    "min": 56.97
+  },
+  "duration_s": 0.231,
+  "throughput_rps": 260.0,
+  "expected_successes": 20,
+  "request_grid": [
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "success"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "C",
+      "success"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "success"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ],
+    [
+      "A",
+      "rate_limited"
+    ],
+    [
+      "B",
+      "rate_limited"
+    ],
+    [
+      "C",
+      "rate_limited"
+    ]
+  ],
+  "db": {
+    "db_confirmed_bookings": 20,
+    "db_unique_seats_booked": 20,
+    "db_duplicate_seat_assignments": 0,
+    "db_seat_status_counts": {
+      "AVAILABLE": 40,
+      "BOOKED": 20
+    },
+    "db_booked_seat_without_booking": 0,
+    "db_booking_without_booked_seat": 0,
+    "client_vs_db_booking_ids_match": true,
+    "bookings_in_db_not_reported_to_clients": 0,
+    "client_successes_missing_in_db": 0,
+    "db_requests_received_by_node": {
+      "A": 19,
+      "B": 20,
+      "C": 21
+    },
+    "db_lock_events": {}
+  },
+  "unique_seats_booked": 20,
+  "duplicate_seat_assignments": 0,
+  "checks": [
+    {
+      "check": "No seat has two CONFIRMED bookings",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "check": "Confirmed bookings never exceed seats",
+      "expected": "<= 60",
+      "actual": 20,
+      "pass": true
+    },
+    {
+      "check": "Every BOOKED seat has its CONFIRMED booking",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "check": "Every CONFIRMED booking owns a BOOKED seat",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "check": "Booking IDs returned to clients == booking IDs in PostgreSQL",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "check": "Unexpected infrastructure errors",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "check": "Successful bookings (DB)",
+      "expected": 20,
+      "actual": 20,
+      "pass": true
+    },
+    {
+      "check": "Requests beyond the per-user limit get HTTP 429",
+      "expected": 40,
+      "actual": 40,
+      "pass": true
+    }
+  ],
+  "all_checks_passed": true,
+  "consistency_result": "CONSISTENT",
+  "finished_at": "2026-10-15T17:01:50.204098+00:00"
+}

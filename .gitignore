@@ -1,0 +1,13 @@
+# secrets
+.env
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+# local runtime (logs, pid files, nginx temp)
+runtime/

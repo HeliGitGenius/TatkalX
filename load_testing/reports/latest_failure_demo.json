@@ -1,0 +1,647 @@
+{
+  "generated_at": "2026-10-15T17:04:12.280720+00:00",
+  "journey_id": 68,
+  "requests": 480,
+  "final_status_counts": {
+    "201": 480
+  },
+  "requests_needing_client_retry": 0,
+  "nginx_transparent_failovers": 4,
+  "served_by_node": {
+    "B": 159,
+    "C": 204,
+    "A": 117
+  },
+  "events": [
+    {
+      "t": 0.0,
+      "event": "traffic start: 480 bookings at 15.0/s, journey 68"
+    },
+    {
+      "t": 4.02,
+      "event": "CRASH Node A injected -> crashing"
+    },
+    {
+      "t": 16.03,
+      "event": "BROWN-OUT Node B for 4s (status 200)"
+    },
+    {
+      "t": 22.04,
+      "event": "REDIS STOPPED (process failure of the coordination service)"
+    },
+    {
+      "t": 27.05,
+      "event": "REDIS RESTARTED"
+    },
+    {
+      "t": 34.58,
+      "event": "traffic finished"
+    }
+  ],
+  "timeline": [
+    {
+      "second": 0,
+      "node_A": 4,
+      "node_B": 6,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 1,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 2,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 3,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 4,
+      "lb_failovers": 1,
+      "node_A": 2,
+      "node_B": 6,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 5,
+      "node_B": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 6,
+      "node_B": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 7,
+      "node_B": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 8,
+      "node_B": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 9,
+      "lb_failovers": 1,
+      "node_B": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 10,
+      "node_B": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 11,
+      "node_B": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 12,
+      "node_B": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 13,
+      "node_A": 1,
+      "node_B": 7,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 14,
+      "node_B": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 15,
+      "node_A": 2,
+      "node_B": 6,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 16,
+      "lb_failovers": 1,
+      "node_A": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 17,
+      "node_A": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 18,
+      "lb_failovers": 1,
+      "node_A": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 19,
+      "node_A": 7,
+      "node_C": 8,
+      "success": 15
+    },
+    {
+      "second": 20,
+      "node_A": 8,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 21,
+      "node_A": 6,
+      "node_B": 2,
+      "node_C": 7,
+      "success": 15
+    },
+    {
+      "second": 22,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 23,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 24,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 25,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 26,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 27,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 28,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 29,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 30,
+      "node_A": 5,
+      "node_B": 5,
+      "node_C": 5,
+      "success": 15
+    },
+    {
+      "second": 31,
+      "node_A": 5,
+      "node_B": 4,
+      "node_C": 6,
+      "success": 15
+    }
+  ],
+  "health_samples": [
+    {
+      "t": 0.0,
+      "A": "ok",
+      "A_pid": 5241,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 1.1,
+      "A": "ok",
+      "A_pid": 5241,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 2.1,
+      "A": "ok",
+      "A_pid": 5241,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 3.1,
+      "A": "ok",
+      "A_pid": 5241,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 4.1,
+      "A": "ok",
+      "A_pid": 5241,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 5.1,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 6.1,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 7.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 8.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 9.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 10.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 11.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 12.2,
+      "A": "down",
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 13.2,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 14.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 15.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 16.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "unhealthy",
+      "B_pid": null,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 17.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "unhealthy",
+      "B_pid": null,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 18.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "unhealthy",
+      "B_pid": null,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 19.3,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "unhealthy",
+      "B_pid": null,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 20.4,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 21.4,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 22.4,
+      "A": "degraded",
+      "A_pid": 5273,
+      "B": "degraded",
+      "B_pid": 5242,
+      "C": "degraded",
+      "C_pid": 5243
+    },
+    {
+      "t": 23.4,
+      "A": "degraded",
+      "A_pid": 5273,
+      "B": "degraded",
+      "B_pid": 5242,
+      "C": "degraded",
+      "C_pid": 5243
+    },
+    {
+      "t": 24.4,
+      "A": "degraded",
+      "A_pid": 5273,
+      "B": "degraded",
+      "B_pid": 5242,
+      "C": "degraded",
+      "C_pid": 5243
+    },
+    {
+      "t": 25.4,
+      "A": "degraded",
+      "A_pid": 5273,
+      "B": "degraded",
+      "B_pid": 5242,
+      "C": "degraded",
+      "C_pid": 5243
+    },
+    {
+      "t": 26.4,
+      "A": "degraded",
+      "A_pid": 5273,
+      "B": "degraded",
+      "B_pid": 5242,
+      "C": "degraded",
+      "C_pid": 5243
+    },
+    {
+      "t": 27.5,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 28.5,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 29.5,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 30.5,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 31.5,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 32.6,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    },
+    {
+      "t": 33.6,
+      "A": "ok",
+      "A_pid": 5273,
+      "B": "ok",
+      "B_pid": 5242,
+      "C": "ok",
+      "C_pid": 5243
+    }
+  ],
+  "node_a_restarted": true,
+  "final_health": {
+    "A": {
+      "status": "ok",
+      "pid": 5273,
+      "uptime_s": 31.6,
+      "database": {
+        "ok": true,
+        "latency_ms": 1.76
+      },
+      "redis": {
+        "ok": true,
+        "latency_ms": 0.27
+      }
+    },
+    "B": {
+      "status": "ok",
+      "pid": 5242,
+      "uptime_s": 55.3,
+      "database": {
+        "ok": true,
+        "latency_ms": 1.3
+      },
+      "redis": {
+        "ok": true,
+        "latency_ms": 0.26
+      }
+    },
+    "C": {
+      "status": "ok",
+      "pid": 5243,
+      "uptime_s": 55.5,
+      "database": {
+        "ok": true,
+        "latency_ms": 1.21
+      },
+      "redis": {
+        "ok": true,
+        "latency_ms": 0.24
+      }
+    }
+  },
+  "db": {
+    "db_confirmed_bookings": 480,
+    "db_unique_seats_booked": 480,
+    "db_duplicate_seat_assignments": 0,
+    "db_seat_status_counts": {
+      "AVAILABLE": 20,
+      "BOOKED": 480
+    },
+    "db_booked_seat_without_booking": 0,
+    "db_booking_without_booked_seat": 0,
+    "client_vs_db_booking_ids_match": true,
+    "bookings_in_db_not_reported_to_clients": 0,
+    "client_successes_missing_in_db": 0,
+    "db_requests_received_by_node": {
+      "A": 116,
+      "B": 159,
+      "C": 204
+    },
+    "db_lock_events": {}
+  },
+  "users_with_more_than_one_booking": 0,
+  "checks": [
+    {
+      "check": "Bookings succeeded during the failures",
+      "pass": true
+    },
+    {
+      "check": "No request ended in a 5xx/connection error after controlled retries",
+      "pass": true
+    },
+    {
+      "check": "No seat booked twice",
+      "pass": true
+    },
+    {
+      "check": "Retries never created a second booking for a request",
+      "pass": true
+    },
+    {
+      "check": "Client-visible successes == PostgreSQL bookings",
+      "pass": true
+    },
+    {
+      "check": "Seat/booking cross-references consistent",
+      "pass": true
+    }
+  ],
+  "all_checks_passed": true
+}

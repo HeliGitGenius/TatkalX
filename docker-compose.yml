@@ -1,0 +1,89 @@
+# TatkalX: 3 FastAPI nodes + Nginx load balancer + PostgreSQL + Redis.
+#   cp .env.example .env && docker compose up --build
+#   open http://localhost:8080
+name: tatkalx
+
+x-node: &node
+  build: { context: ., dockerfile: backend/Dockerfile }
+  env_file: .env
+  environment: &node-env
+    DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    REDIS_URL: redis://redis:6379/0
+    LOAD_BALANCER_URL: http://nginx:80
+    REPORTS_DIR: /srv/load_testing/reports
+  depends_on:
+    migrate: { condition: service_completed_successfully }
+    redis: { condition: service_healthy }
+  restart: on-failure   # an injected crash (exit 75) is restarted automatically
+  networks: [backend]
+  volumes: [reports:/srv/load_testing/reports]
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    command: ["postgres", "-c", "max_connections=300"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 3s
+      retries: 20
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [backend]          # not published to the host
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      retries: 20
+    networks: [backend]          # not published to the host
+
+  migrate:                       # one-shot: schema migrations + simulated seed data
+    build: { context: ., dockerfile: backend/Dockerfile }
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    command: ["sh", "-c", "alembic upgrade head && python ../scripts/seed_data.py"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    networks: [backend]
+
+  node-a:
+    <<: *node
+    environment: { <<: *node-env, NODE_ID: "A" }
+  node-b:
+    <<: *node
+    environment: { <<: *node-env, NODE_ID: "B" }
+  node-c:
+    <<: *node
+    environment: { <<: *node-env, NODE_ID: "C" }
+
+  nginx:                         # load balancer + static frontend
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    ports: ["8080:80"]
+    depends_on: [node-a, node-b, node-c]
+    networks: [backend]
+
+  bench:                         # docker compose --profile bench run --rm bench
+    profiles: ["bench"]
+    build: { context: ., dockerfile: backend/Dockerfile }
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      LOAD_BALANCER_URL: http://nginx:80
+    working_dir: /srv
+    command: ["python", "load_testing/benchmark.py", "--suite"]
+    depends_on: [nginx]
+    networks: [backend]
+    volumes: [reports:/srv/load_testing/reports]
+
+volumes:
+  pgdata:
+  reports:
+
+networks:
+  backend:
