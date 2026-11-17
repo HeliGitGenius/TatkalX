@@ -1,5 +1,9 @@
 # TatkalX — Distributed Ticket Booking System with Double-Booking Prevention
 
+**At a glance:** 3 stateless FastAPI nodes behind Nginx, PostgreSQL as the source of truth, Redis for locks and rate limits.
+**500 concurrent requests for 1 seat → exactly 1 booking** (an unprotected baseline sold it 4 times); 100 bookings each sent 5× with the same idempotency key → exactly 100 bookings.
+**480/480 bookings succeeded** while a node crashed, a node browned out and Redis went down. 15/15 pytest tests pass.
+
 > **Simulation.** All trains, schedules, PNRs and bookings are fictional. Nothing connects to any real railway system.
 
 TatkalX simulates the Tatkal rush: hundreds of people pressing *Book* for the same few berths at the same instant.
